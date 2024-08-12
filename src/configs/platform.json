@@ -1,0 +1,25 @@
+{
+	"container": {
+		"parallel_limit": 1,
+		"request_limit": 0
+	},
+
+	"site": {
+		"title": "Cloudsdale",
+		"description": "Unsafe Cloudsale, try hack me!",
+		"color": "#0C4497"
+	},
+
+	"user": {
+		"register": {
+			"enabled": true,
+			"captcha": {
+				"enabled": false
+			},
+			"Email": {
+				"domains": [],
+				"enabled": false
+			}
+		}
+	}
+}

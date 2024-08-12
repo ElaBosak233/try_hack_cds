@@ -13,8 +13,6 @@ logs
 plugins
 uploads
 /media/
-/configs/
-/db/
 /build/
 /captures/
 test.go
