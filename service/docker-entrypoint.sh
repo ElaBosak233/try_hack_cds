@@ -20,13 +20,14 @@ else
     INSERT_FLAG="flag{TEST_Dynamic_FLAG}"
 fi
 
-# 将FLAG写入文件 请根据需要修改
-echo $INSERT_FLAG | tee /flag
+sqlite3 /app/db/db.sqlite <<EOF
+--
+UPDATE challenges SET title = '$INSERT_FLAG' WHERE id = 2;
+--
+COMMIT;
+--
+EOF
 
-sed -i "s/{{inject_me_with_flag}}/$INSERT_FLAG/g" /app/db/db.sqlite
-
-# 控制flag和项目源码的权限
-chmod 744 /flag
 chmod 740 /app/*
 
 cd /app && ./cloudsdale

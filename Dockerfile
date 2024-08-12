@@ -22,6 +22,8 @@ RUN npm run build
 
 FROM ubuntu:latest
 
+RUN apt-get update && apt-get install -y sqlite3
+
 COPY --from=backend /app/configs /app/configs
 COPY --from=backend /app/db /app/db
 COPY --from=backend /app/build/cloudsdale /app/cloudsdale
